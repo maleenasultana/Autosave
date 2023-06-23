@@ -11,15 +11,17 @@ const AddNote = (props) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
         setNote({title: "", description: "", tag: ""})
-        props.showAlert("Added successfully","success");
+        // props.showAlert("Added successfully","success");
     }
 
     const onChange = (e)=>{
         setNote({...note, [e.target.name]: e.target.value})
     }
     return (
-        <div className="container my-3">
-            <h2>Add a Note</h2>
+        <div>
+           
+        <div className="container">
+             <h2>Add a Note</h2>
             <form className="my-3">
                 <div className=" mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
@@ -35,6 +37,7 @@ const AddNote = (props) => {
                 </div>
                 <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
             </form>
+        </div>
         </div>
     )
 }

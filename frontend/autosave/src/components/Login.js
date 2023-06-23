@@ -22,7 +22,7 @@ const Login = (props) => {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken); 
             props.showAlert("logged in  Successfully","success");
-            history?.push("/home");
+            history("/");
             
 
         }

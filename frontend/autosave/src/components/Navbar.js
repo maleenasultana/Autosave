@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css"
 function Navbar() {
-  let history = useNavigate();
+  let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('token');
-    history('/login');
+    navigate('/login');
   };
   let location = useLocation();
   useEffect(() => {

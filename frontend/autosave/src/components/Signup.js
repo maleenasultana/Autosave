@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { useNavigate } from "react-router-dom";
 const Signup = (props) => {
     const [credentials, setCredentials] = useState({name : "" ,email: "", password: "", cpassword:""}) 
-    let history = useNavigate();
+    let navigate=useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,7 +20,7 @@ const Signup = (props) => {
         if (json.success){
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken); 
-            history.push("/");
+            navigate("/");
             props.showAlert("Account Created Successfully","success");
         }
         else{
